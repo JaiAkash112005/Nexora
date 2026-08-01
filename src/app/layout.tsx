@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-inter",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-space",
 });
 
 export const metadata: Metadata = {
-  title: "NEXORA",
-  description: "The Next Era of Innovation.",
+  title: "Nexora — Portfolio & Startup Platform",
+  description: "Next-gen tech solutions and platforms",
 };
 
 export default function RootLayout({
@@ -23,10 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
-      >
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-[#020202] text-white antialiased min-h-screen selection:bg-purple-500 selection:text-white`}>
         {children}
       </body>
     </html>
