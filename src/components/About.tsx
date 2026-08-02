@@ -43,7 +43,7 @@ export default function About() {
             </p>
 
             {/* Quick Feature Grid */}
-            <div className="mt-10 grid grid-cols-2 gap-6">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 { icon: Code2, title: "Clean Architecture", desc: "Maintainable & robust codebases" },
                 { icon: Cpu, title: "AI & Next-Gen Tech", desc: "AI agents, mobile & full-stack" },
@@ -70,13 +70,14 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-[32px] border border-white/10 bg-white/[0.02] p-8 md:p-10 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+            className="relative rounded-[32px] border border-white/10 bg-white/[0.02] p-6 sm:p-10 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)]"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-transparent rounded-[32px] pointer-events-none" />
 
             <h3 className="text-xl font-bold text-white mb-6">Performance Matrix</h3>
             
-            <div className="grid grid-cols-2 gap-6">
+            {/* FIXED: Uses grid-cols-1 on mobile, scaling to grid-cols-2 on sm screens */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {stats.map((stat, idx) => (
                 <div key={idx} className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-purple-500/40 hover:bg-white/10">
                   <span className="text-2xl md:text-3xl font-black text-purple-300 font-mono">{stat.value}</span>
