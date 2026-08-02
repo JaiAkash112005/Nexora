@@ -14,9 +14,61 @@ import {
   Eye,
   ChevronLeft,
   ChevronRight,
+  ShoppingBag,
+  HeartPulse,
+  Activity,
+  Globe,
+  Sparkles,
 } from "lucide-react";
 
-// Project 1: Finance Tracker Features & Screenshots
+// Project 1: MedicalWorld Features & Screenshots (First)
+const medicalFeatures = [
+  {
+    icon: ShoppingBag,
+    title: "Comprehensive E-Commerce Store",
+    description: "Curated healthcare, lifestyle, and wellness essentials with instant cart and wishlist features.",
+  },
+  {
+    icon: Activity,
+    title: "Dynamic Category Filtering",
+    description: "Seamless product filtering by category, health care types, electronics, and price ranges.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Health & Medical Devices",
+    description: "Specialized medical equipment, daily essentials, and professional wellness packages.",
+  },
+  {
+    icon: Globe,
+    title: "Multi-Language & Global Reach",
+    description: "Localized shopping experience with custom currency and language support options.",
+  },
+];
+
+const medicalScreenshots = [
+  {
+    src: "/screenshots/Mediworld.Home.png",
+    title: "Home Showcase",
+    desc: "Health & wellness delivered to your door hero banner and featured essentials",
+  },
+  {
+    src: "/screenshots/Mediworld.Shop.png",
+    title: "Shop & Collections",
+    desc: "Curated store catalog with advanced category filters and discount tags",
+  },
+  {
+    src: "/screenshots/Mediworld.About.png",
+    title: "About MedicalWorld",
+    desc: "Brand mission, healthcare dedication, and premium product introduction",
+  },
+  {
+    src: "/screenshots/Mediworld.Contact.png",
+    title: "Contact & Support",
+    desc: "Customer inquiry portal, direct location details, and support maps",
+  },
+];
+
+// Project 2: Finance Tracker Features & Screenshots
 const financeFeatures = [
   {
     icon: Wallet,
@@ -53,7 +105,7 @@ const financeScreenshots = [
   },
 ];
 
-// Project 2: Vendor Book Features & Screenshots
+// Project 3: Vendor Book Features & Screenshots
 const vendorFeatures = [
   {
     icon: Store,
@@ -103,21 +155,33 @@ const vendorScreenshots = [
 const projects = [
   {
     id: "01",
+    title: "MedicalWorld E-Commerce",
+    tagline: "Healthcare, Wellness & Lifestyle Platform",
+    description: "A state-of-the-art digital e-commerce platform specializing in medical devices, healthcare essentials, and wellness lifestyle products with dynamic filtering.",
+    tags: ["E-Commerce", "HealthTech"],
+    features: medicalFeatures,
+    screenshots: medicalScreenshots,
+    isUpcoming: true,
+  },
+  {
+    id: "02",
     title: "Finance Tracker App",
     tagline: "Smart Finance & Budget Platform",
     description: "A comprehensive financial management platform engineered for seamless budget tracking, personal finance, and real-time category analytics.",
     tags: ["Dashboard", "Finance", "Analytics"],
     features: financeFeatures,
     screenshots: financeScreenshots,
+    isUpcoming: false,
   },
   {
-    id: "02",
+    id: "03",
     title: "Vendor Book Platform",
     tagline: "Smart Produce Ledger & B2B Management",
     description: "An advanced vendor management system built for agricultural and wholesale suppliers to manage tiered customer rates, daily dues, and automated revenue analytics.",
     tags: ["B2B", "Management", "Ledger"],
     features: vendorFeatures,
     screenshots: vendorScreenshots,
+    isUpcoming: false,
   },
 ];
 
@@ -125,13 +189,13 @@ export default function Portfolio() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeModal, setActiveModal] = useState<{
     isOpen: boolean;
-    screenshots: typeof financeScreenshots;
+    screenshots: typeof medicalScreenshots;
     selectedImg: string;
     title: string;
   }>({
     isOpen: false,
-    screenshots: financeScreenshots,
-    selectedImg: financeScreenshots[0].src,
+    screenshots: medicalScreenshots,
+    selectedImg: medicalScreenshots[0].src,
     title: "",
   });
 
@@ -157,7 +221,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeModal.isOpen]);
 
-  const openModal = (screenshotsList: typeof financeScreenshots, title: string) => {
+  const openModal = (screenshotsList: typeof medicalScreenshots, title: string) => {
     setActiveModal({
       isOpen: true,
       screenshots: screenshotsList,
@@ -252,7 +316,14 @@ export default function Portfolio() {
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {currentProject.isUpcoming && (
+                      <span className="flex items-center gap-1.5 rounded-full border border-fuchsia-500/40 bg-gradient-to-r from-purple-600/20 to-fuchsia-600/20 px-3 py-1 text-[11px] font-bold text-fuchsia-300 shadow-[0_0_15px_rgba(217,70,239,0.3)] animate-pulse">
+                        <Sparkles className="h-3 w-3 text-fuchsia-400" />
+                        <span>🚀 Upcoming • Under Production</span>
+                      </span>
+                    )}
+
                     {currentProject.tags.map((tag, idx) => (
                       <span key={idx} className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-zinc-300">
                         {tag}
