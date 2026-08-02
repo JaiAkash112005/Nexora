@@ -15,12 +15,12 @@ export default function Hero() {
   if (!mounted) {
     // Renders an identical static layout on the server and initial client frame
     return (
-      <section id="top" className="relative min-h-screen overflow-hidden bg-[#020202] text-white pt-20">
+      <section id="top" className="relative min-h-screen overflow-hidden bg-[#020202] text-white pt-40 sm:pt-48">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute left-1/2 top-1/2 h-[750px] w-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/15 blur-[220px]" />
           <div className="absolute left-1/2 top-1/2 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-500/10 blur-[150px]" />
         </div>
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl items-center justify-between gap-20 px-8 lg:flex-row flex-col">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-120px)] max-w-7xl items-center justify-between gap-20 px-8 lg:flex-row flex-col">
           <div className="flex-1">
             <h1 className="relative inline-block text-[50px] sm:text-[68px] md:text-[90px] lg:text-[105px] font-black leading-none tracking-[8px] md:tracking-[12px] whitespace-nowrap">
               <span className="relative bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
@@ -40,7 +40,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden bg-[#020202] text-white pt-20">
+    <section id="top" className="relative min-h-screen overflow-hidden bg-[#020202] text-white pt-40 sm:pt-48">
 
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden">
@@ -90,7 +90,7 @@ export default function Hero() {
         z-10
         mx-auto
         flex
-        min-h-[calc(100vh-80px)]
+        min-h-[calc(100vh-120px)]
         max-w-7xl
         items-center
         justify-between
