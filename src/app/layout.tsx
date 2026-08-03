@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Nexora — Portfolio & Startup Platform",
-  description: "Next-gen tech solutions and platforms",
+export const metadata = {
+  title: "Nex ApX | The Next Era of Innovation",
+  description: "Building the next era of intelligent software, scalable web architectures, and innovative digital solutions.",
 };
 
 export default function RootLayout({
