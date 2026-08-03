@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Nex ApX | The Next Era of Innovation",
   description: "Building the next era of intelligent software, scalable web architectures, and innovative digital solutions.",
 };
