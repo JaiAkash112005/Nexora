@@ -23,7 +23,7 @@ const teamMembers = [
     skills: ["Full-Stack Dev", "AI & Machine Learning", "Core Architecture", "Software Engineering"],
   },
   {
-    initials: "JAA",
+    initials: "AJ",
     name: "Jai Akash A",
     role: "CO-FOUNDER & DATA SPECIALIST",
     bio: "Leads UI/UX design, frontend architecture, and brand publishing. Specialist in Data Science, Data Analytics, Data Engineering, SEO, and Marketing.",
