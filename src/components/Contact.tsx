@@ -27,7 +27,7 @@ export default function ContactSection() {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          access_key: "cf4b6c75-26ee-42bd-9a5a-0ce4962f03b1",
+          access_key: "b533f6ef-5a4b-4346-a372-87674c9c762e",
           subject: `New Message from ${formData.firstName} ${formData.lastName} - Nex ApX`,
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
