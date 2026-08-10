@@ -244,17 +244,14 @@ export default function Hero() {
 
         </motion.div>
 
-        {/* RIGHT SIDE - Floating Logo with Blend Mode to remove background box */}
+        {/* RIGHT SIDE - Floating Logo with NO background glow behind it */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           className="flex justify-center items-center flex-1 relative"
         >
-          {/* Subtle Ambient Back Glow */}
-          <div className="absolute h-64 w-64 rounded-full bg-purple-600/20 blur-[100px] pointer-events-none" />
-
-          {/* Floating Logo Container with screen blend mode to eliminate dark/purple image background */}
+          {/* Floating Logo Container */}
           <motion.div
             animate={{
               y: [-12, 12, -12],
@@ -264,7 +261,7 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative z-10 flex items-center justify-center cursor-pointer mix-blend-screen"
+            className="relative z-10 flex items-center justify-center cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             <img 
