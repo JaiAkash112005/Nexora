@@ -12,7 +12,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative overflow-hidden bg-[#020202] py-36 text-white border-t border-white/5">
+    <section id="about" className="relative overflow-hidden bg-[#020202] py-36 text-white">
       {/* Background Ambient Glow */}
       <div className="absolute right-1/4 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-purple-600/10 blur-[150px] pointer-events-none" />
 
@@ -76,7 +76,7 @@ export default function About() {
 
             <h3 className="text-xl font-bold text-white mb-6">Performance Matrix</h3>
             
-            {/* FIXED: Uses grid-cols-1 on mobile, scaling to grid-cols-2 on sm screens */}
+            {/* Uses grid-cols-1 on mobile, scaling to grid-cols-2 on sm screens */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {stats.map((stat, idx) => (
                 <div key={idx} className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-purple-500/40 hover:bg-white/10">

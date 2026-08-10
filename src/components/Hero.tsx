@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import HexCore from "@/components/ui/HexCore";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -23,7 +22,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-120px)] max-w-7xl items-center justify-between gap-20 px-8 lg:flex-row flex-col">
           <div className="flex-1">
             <h1 className="relative inline-block text-[50px] sm:text-[68px] md:text-[90px] lg:text-[105px] font-black leading-none tracking-[8px] md:tracking-[12px] whitespace-nowrap">
-              <span className="relative bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
                 Nex <span className="text-purple-400">ApX</span>
               </span>
             </h1>
@@ -42,8 +41,8 @@ export default function Hero() {
   return (
     <section id="top" className="relative min-h-screen overflow-hidden bg-[#020202] text-white pt-40 sm:pt-48">
 
-      {/* Background Glow */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Background Ambient Glow */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
             scale: [1, 1.15, 1],
@@ -109,7 +108,7 @@ export default function Hero() {
           className="flex-1"
         >
 
-          {/* Premium Logo */}
+          {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,26 +127,15 @@ export default function Hero() {
             whitespace-nowrap
             "
           >
-            {/* Glow */}
-            <span
-              className="
-              absolute
-              inset-0
-              bg-gradient-to-b
-              from-purple-300
-              via-white
-              to-purple-500
-              bg-clip-text
-              text-transparent
-              blur-md
-              opacity-40
-              "
-            >
-              Nex ApX
-            </span>
-
-            {/* Main Text */}
-            <span
+            <motion.span
+              animate={{
+                opacity: [0.85, 1, 0.85],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
               className="
               relative
               bg-gradient-to-b
@@ -156,11 +144,11 @@ export default function Hero() {
               to-zinc-500
               bg-clip-text
               text-transparent
-              drop-shadow-[0_0_35px_rgba(168,85,247,.35)]
+              drop-shadow-[0_0_15px_rgba(168,85,247,0.35)]
               "
             >
-              Nex <span className="text-purple-400">ApX</span>
-            </span>
+              Nex <span className="text-purple-400 drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]">ApX</span>
+            </motion.span>
           </motion.h1>
 
           {/* Tagline */}
@@ -179,7 +167,7 @@ export default function Hero() {
             THE NEXT ERA OF INNOVATION
           </motion.p>
 
-            {/* Description */}
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -256,14 +244,35 @@ export default function Hero() {
 
         </motion.div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT SIDE - Floating Logo with Blend Mode to remove background box */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.6 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
-          className="flex justify-center flex-1"
+          transition={{ duration: 1 }}
+          className="flex justify-center items-center flex-1 relative"
         >
-          <HexCore />
+          {/* Subtle Ambient Back Glow */}
+          <div className="absolute h-64 w-64 rounded-full bg-purple-600/20 blur-[100px] pointer-events-none" />
+
+          {/* Floating Logo Container with screen blend mode to eliminate dark/purple image background */}
+          <motion.div
+            animate={{
+              y: [-12, 12, -12],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative z-10 flex items-center justify-center cursor-pointer mix-blend-screen"
+            whileHover={{ scale: 1.05 }}
+          >
+            <img 
+              src="/logo.png" 
+              alt="Nex ApX Logo" 
+              className="h-72 w-72 sm:h-[420px] sm:w-[420px] object-contain drop-shadow-[0_0_40px_rgba(168,85,247,0.45)]" 
+            />
+          </motion.div>
         </motion.div>
 
       </div>
