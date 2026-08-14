@@ -21,10 +21,10 @@ export default function Navbar() {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-2xl"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8 py-4 sm:py-5">
         
         {/* Logo */}
-        <a href="#top" className="cursor-pointer text-3xl font-black tracking-widest text-white">
+        <a href="#top" className="cursor-pointer text-2xl sm:text-3xl font-black tracking-widest text-white">
           Nex <span className="text-purple-400">ApX</span>
         </a>
 
@@ -53,36 +53,36 @@ export default function Navbar() {
         {/* Mobile Hamburger Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none"
+          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none"
         >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
 
       </div>
 
-      {/* Mobile Dropdown / Sliding Menu */}
+      {/* Mobile Compact Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-white/10 bg-[#0A0A0A]/95 backdrop-blur-xl px-8 py-6"
+            className="md:hidden border-b border-white/10 bg-[#0A0A0A]/95 backdrop-blur-xl px-6 py-5"
           >
-            <div className="flex flex-col gap-5 text-base font-medium text-gray-300">
+            <div className="flex flex-col gap-3.5 text-sm font-medium text-gray-300">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="transition duration-300 hover:text-white"
+                  className="transition duration-300 hover:text-purple-400 py-1"
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-3 border-t border-white/10">
                 <a href="#contact" onClick={() => setIsOpen(false)}>
-                  <button className="w-full rounded-full bg-gradient-to-r from-purple-600 to-blue-600 py-3 text-sm font-semibold text-white text-center shadow-lg transition duration-300 hover:scale-105">
+                  <button className="w-full rounded-full bg-gradient-to-r from-purple-600 to-blue-600 py-2.5 text-xs font-semibold text-white text-center shadow-md transition duration-300 hover:scale-[1.02]">
                     Contact Us
                   </button>
                 </a>
