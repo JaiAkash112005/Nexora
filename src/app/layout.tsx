@@ -23,7 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    // Added suppressHydrationWarning to prevent browser extension warnings
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} bg-[#020202] text-white antialiased min-h-screen selection:bg-purple-500 selection:text-white`}>
         {children}
       </body>

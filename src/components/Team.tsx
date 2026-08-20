@@ -8,7 +8,7 @@ const teamMembers = [
     initials: "AVN",
     name: "Ashwant V N",
     role: "FOUNDER & PRODUCT LEAD",
-    bio: "Drives client relations, project acquisition, and product strategy. Expert in Cloud Infrastructure (AWS), DevOps, and end-to-end product management.",
+    bio: "Spearheads client acquisition, strategic partnerships, and end-to-end product lifecycle management. Expert in designing robust Cloud Infrastructure (AWS), streamlining DevOps pipelines, and driving high-impact product growth strategies.",
     icon: Cloud,
     tagLabel: "Cloud & Product",
     skills: ["Product Management", "AWS", "DevOps", "Client Relations"],
@@ -25,11 +25,11 @@ const teamMembers = [
   {
     initials: "AJ",
     name: "Jai Akash A",
-    role: "CO-FOUNDER & DATA SPECIALIST",
-    bio: "Leads UI/UX design, frontend architecture, and brand publishing. Specialist in Data Science, Data Analytics, Data Engineering, SEO, and Marketing.",
+    role: "CO-FOUNDER & DATA & PRODUCTION SPECIALIST",
+    bio: "Leads UI/UX design, frontend architecture, brand publishing, production deployment, and server management. Specialist in Data Science, Data Engineering, SEO, and Marketing.",
     icon: Database,
-    tagLabel: "Data & UI/UX",
-    skills: ["Data Science", "Frontend & UI/UX", "SEO & Marketing", "DevOps"],
+    tagLabel: "Data, UI/UX & Production",
+    skills: ["Data Science", "Frontend & UI/UX", "Production & Server Management", "SEO & Marketing"],
   },
 ];
 
@@ -104,7 +104,7 @@ export default function Team() {
                     </motion.span>
 
                     {/* Work Focus Tag */}
-                    <span className="relative mt-2 font-mono text-[10px] tracking-widest text-purple-400 uppercase bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+                    <span className="relative mt-2 font-mono text-[10px] tracking-widest text-purple-400 uppercase bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20 text-center">
                       {member.tagLabel}
                     </span>
                   </div>
