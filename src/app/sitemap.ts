@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://nexapx.com'; // Unoda official domain name-la replace panniko
+  const baseUrl = 'https://nexapx.in'; // Updated to .in domain
 
   return [
     {
