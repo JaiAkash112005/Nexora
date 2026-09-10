@@ -6,7 +6,7 @@ import { Cloud, Code2, Database } from "lucide-react";
 const teamMembers = [
   {
     initials: "AVN",
-    name: "Ashwant V N",
+    name: "Ashwanth V N",
     role: "FOUNDER & PRODUCT LEAD",
     bio: "Spearheads client acquisition, strategic partnerships, and end-to-end product lifecycle management. Expert in designing robust Cloud Infrastructure (AWS), streamlining DevOps pipelines, and driving high-impact product growth strategies.",
     icon: Cloud,
